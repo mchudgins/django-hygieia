@@ -20,3 +20,7 @@ def index(request):
 
 def health(request):
     return HttpResponse(PageView.objects.count())
+
+def fubar(request):
+    response = HttpResponse("hello, world", content_type="text/plain")
+    return response

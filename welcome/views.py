@@ -13,6 +13,7 @@ def index(request):
     PageView.objects.create(hostname=hostname)
 
     return render(request, 'welcome/index.html', {
+	'INTERNAL_IPs': request.META['REMOTE_ADDR'],
         'hostname': hostname,
         'database': database.info(),
         'count': PageView.objects.count()
